@@ -1,8 +1,8 @@
 const pets = [
     {
       id: 1,
-      name: "Dusty",
-      color: "blue",
+      name: "Beilei",
+      user_email: "beileibud@gmail.com",
       specialSkill: "Gives sincere apologies.",
       type: "cat",
       imageUrl:
