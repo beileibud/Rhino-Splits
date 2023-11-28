@@ -1,3 +1,4 @@
+import LabelBottomNavigation from '../components/BottomNav';
 import YourComponent from '../components/YourComponet';
 // import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
 // import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
@@ -18,6 +19,7 @@ function Home() {
     >
       <h1>Hello! </h1>
       <YourComponent />
+      <LabelBottomNavigation />
     </div>
   );
 }
