@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import getUsers from '../contax/userData';
 
 const YourComponent = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getUsers().then(setData)
+    getUsers().then(setData);
   }, []);
   console.warn(data);
 
@@ -16,7 +17,7 @@ const YourComponent = () => {
         {data.map((item) => (
           <li key={item.id}>
             <p>{item.name}</p>
-            <img src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
+            <Image src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
           </li>
         ))}
       </ul>

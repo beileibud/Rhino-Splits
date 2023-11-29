@@ -1,6 +1,5 @@
 import LabelBottomNavigation from '../components/BottomNav';
 import YourComponent from '../components/YourComponet';
-import { getUsers } from '../contax/userData';
 // import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
 // import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
 // import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
