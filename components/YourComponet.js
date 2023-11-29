@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import pets from '../utils/data/data';
+import getUsers from '../contax/userData';
 
 const YourComponent = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(pets);
+    getUsers().then(setData)
   }, []);
+  console.warn(data);
 
   return (
     <div>
@@ -15,7 +16,7 @@ const YourComponent = () => {
         {data.map((item) => (
           <li key={item.id}>
             <p>{item.name}</p>
-            <img src={item.imageUrl} alt={item.name} style={{ maxWidth: '200px' }} />
+            <img src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
           </li>
         ))}
       </ul>
