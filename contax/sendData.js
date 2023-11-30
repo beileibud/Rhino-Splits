@@ -1,7 +1,7 @@
 const dbUrl = 'http://localhost:8088';
 
-const getUsers = () => new Promise((resolve, reject) => {
-    fetch(`${dbUrl}/users`, { // Note the '/' at the beginning to start from the root
+const getSend = () => new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/sends`, { // Note the '/' at the beginning to start from the root
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -20,8 +20,8 @@ const getUsers = () => new Promise((resolve, reject) => {
     });
   });
 
-  const getSingleUser = () => new Promise((resolve, reject) => {
-    fetch(`${dbUrl}/users/${id}`, {
+  const getSingleSend = () => new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/sends/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -32,8 +32,8 @@ const getUsers = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
 
-  const createUser = (payload) => new Promise((resolve, reject) => {
-    fetch(`${dbUrl}/users`, {
+  const createSend = (payload) => new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/sends`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,9 +45,9 @@ const getUsers = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
 
-  const updateUser = (payload) => {
+  const updateSend = (payload) => {
     return new Promise((resolve, reject) => {
-      fetch(`${dbUrl}/users/${payload.id}`, {
+      fetch(`${dbUrl}/sends/${payload.id}`, {
         method: 'PATCH', // or 'PATCH' depending on your API
         headers: {
           'Content-Type': 'application/json',
@@ -71,8 +71,8 @@ const getUsers = () => new Promise((resolve, reject) => {
     });
   };
 
-  const deleteSingleUser = (payload) => new Promise((resolve, reject) => {
-    fetch(`${dbUrl}/users/${payload.id}`, {
+  const deleteSingleSend = (payload) => new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/sends/${payload.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -84,9 +84,9 @@ const getUsers = () => new Promise((resolve, reject) => {
   });
     
   export {
-    getUsers,
-    getSingleUser,
-    createUser,
-    updateUser,
-    deleteSingleUser
+    getSend,
+    getSingleSend,
+    updateSend,
+    createSend,
+    deleteSingleSend
   };

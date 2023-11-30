@@ -1,43 +1,46 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "name": "Beilei Zhu",
-            "email": "Beileibud@gamil.com",
-            "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
-            "balance": "$25.00",
-            "bank": "American"
-        },
-        {
-            "id": "2",
-            "name": "Zhen Zhu",
-            "email": "ZhenZ123@gamil.com",
-            "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
-            "balance": "$25.00",
-            "bank": "American"
-        }
-    ],
-    "requests": [],
-    "sends": [
-        {
-            "id": "1",
-            "name": "Beilei Zhu",
-            "friend_name": "Zhen Zhu",
-            "email": "ZhenZ123@gamil.com",
-            "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
-            "Amount": "$10.00",
-            "bank": "American",
-            "user_id": ""
-        },
-        {
-            "id": "2",
-            "name": "Beilei Zhu",
-            "friend_name": "Zhen Zhu",
-            "email": "ZhenZ123@gamil.com",
-            "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
-            "Amount": "$10.00",
-            "bank": "American",
-            "user_id": ""
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Beilei Zhu",
+      "email": "Beileibud@gamil.com",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
+      "balance": "$25.00",
+      "bank": "American"
+    },
+    {
+      "id": "2",
+      "name": "Zhen Zhu",
+      "email": "ZhenZ123@gamil.com",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
+      "balance": "$25.00",
+      "bank": "American"
+    },
+    {
+      "id": "nMEhR1_"
+    }
+  ],
+  "requests": [],
+  "sends": [
+    {
+      "id": "1",
+      "name": "Beilei Zhu",
+      "friend_name": "Zhen Zhu",
+      "email": "ZhenZ123@gamil.com",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
+      "Amount": "$10.00",
+      "bank": "American",
+      "user_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Beilei Zhu",
+      "friend_name": "Zhen Zhu",
+      "email": "ZhenZ123@gamil.com",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
+      "Amount": "$10.00",
+      "bank": "American",
+      "user_id": ""
+    }
+  ]
 }
