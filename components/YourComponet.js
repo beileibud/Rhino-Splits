@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import getUsers from '../contax/userData';
+import { getUsers } from '../contax/userData';
 
 const YourComponent = () => {
   const [data, setData] = useState([]);
@@ -15,10 +14,11 @@ const YourComponent = () => {
       <h1>hello seesee</h1>
       <ul>
         {data.map((item) => (
-          <li key={item.id}>
+          <div key={item.id}>
             <p>{item.name}</p>
-            <Image src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
-          </li>
+            <img src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
+            <p>{item.balance}</p>
+          </div>
         ))}
       </ul>
     </div>
