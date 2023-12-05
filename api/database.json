@@ -1,4 +1,31 @@
 {
+  "admin": [
+    {
+      "email": "beileibud@gmail.com",
+      "password": "1232323232323",
+      "id": 1
+    },
+    {
+      "email": "beileibud@gmail.com",
+      "password": "1232323232323",
+      "id": 2
+    },
+    {
+      "email": "George111222@hotmail.com",
+      "password": "12321231231",
+      "id": 3
+    },
+    {
+      "email": "397006891@qq.com",
+      "password": "12321132312312",
+      "id": 4
+    },
+    {
+      "email": "397006891@qq.com",
+      "password": "12321132312312",
+      "id": 5
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -41,6 +68,133 @@
       "Amount": "$10.00",
       "bank": "American",
       "user_id": ""
+    },
+    {
+      "amount": "12",
+      "note": "fasd",
+      "userId": null,
+      "id": "zNCl7gw"
+    },
+    {
+      "amount": "12",
+      "note": "sdcd",
+      "userId": null,
+      "id": "iXHYYdn"
+    },
+    {
+      "amount": "12",
+      "note": "test",
+      "userId": "1",
+      "id": "LjPaaMx"
+    },
+    {
+      "amount": "12",
+      "note": "11",
+      "userId": "1",
+      "id": "hUH3fsT"
+    },
+    {
+      "amount": "1",
+      "note": "1",
+      "userId": "1",
+      "id": "q4P1LKZ"
+    },
+    {
+      "amount": "1",
+      "note": "1",
+      "userId": "1",
+      "id": "ILqy_5m"
+    },
+    {
+      "amount": "12",
+      "note": "test",
+      "userId": "2",
+      "id": "EMcFcTM"
+    },
+    {
+      "amount": "212",
+      "note": "sd",
+      "userId": "2",
+      "id": "nJPLoNs"
+    },
+    {
+      "amount": "12",
+      "note": "2",
+      "userId": "2",
+      "id": "hpYfPFh"
+    },
+    {
+      "amount": "12",
+      "note": "1",
+      "userId": "2",
+      "id": "9DJnNYY"
+    },
+    {
+      "amount": "23",
+      "note": "12312312",
+      "userId": "2",
+      "id": "5_AzH__"
+    },
+    {
+      "amount": "21212",
+      "note": "q",
+      "userId": "1",
+      "id": "bkqrXyS"
+    },
+    {
+      "amount": "1212",
+      "note": "ds",
+      "userId": "1",
+      "id": "O9q0TzV"
+    },
+    {
+      "amount": "44",
+      "note": "ddd",
+      "userId": "1",
+      "id": "tKoDOMI"
+    },
+    {
+      "amount": "44",
+      "note": "ddd",
+      "userId": "1",
+      "id": "UM-s5e9"
+    },
+    {
+      "amount": "5554",
+      "note": "sdsd",
+      "userId": "1",
+      "id": "1ikAx8n"
+    },
+    {
+      "amount": "23234",
+      "note": "324234",
+      "userId": "1",
+      "id": "sX1YeFX"
+    },
+    {
+      "amount": "56.34",
+      "note": "🐇⚾️",
+      "userId": "2",
+      "id": "78GCfME"
+    },
+    {
+      "amount": "677666",
+      "note": "3443",
+      "userId": "2",
+      "id": "hYGkqPW"
+    },
+    {
+      "amount": "222222",
+      "note": "test",
+      "userId": "1",
+      "id": "A2R9a4r"
+    },
+    {
+      "amount": "674.00",
+      "note": "this is for date",
+      "userId": "2",
+      "data": "2023-12-05T04:27:32.142Z",
+      "id": "y-mz9YS"
     }
   ]
 }

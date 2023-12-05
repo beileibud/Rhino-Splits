@@ -1,11 +1,11 @@
-import SignUpForm from "../components/forms/SignUpForm";
+import SelectUser from "../components/payment/SelectUser";
 
 function Home() {
 
 
   return (
     <div>
-      <SignUpForm />
+      <SelectUser />
     </div>
   );
 }
