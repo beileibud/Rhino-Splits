@@ -20,17 +20,38 @@ const getSend = () => new Promise((resolve, reject) => {
     });
   });
 
-  const getSingleSend = () => new Promise((resolve, reject) => {
+  const getSingleSend = (id) => new Promise((resolve, reject) => {
     fetch(`${dbUrl}/sends/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => resolve(data))
-      .catch(reject);
+      .then((response) => {
+        console.log(response); // Add this line to log the response object
+        if (!response.ok) {
+          // You can also log response status and statusText to get more details
+          console.error(`HTTP Error: ${response.status} ${response.statusText}`);
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      
   });
+
+  const getUserSend = async (userId) => {
+    const response = await fetch(`${dbUrl}/sends?userId=${userId}&_sort=id&_order=desc&_limit=1`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return await response.json();
+  };
+  
 
   const createSend = (payload) => new Promise((resolve, reject) => {
     fetch(`${dbUrl}/sends`, {
@@ -86,6 +107,7 @@ const getSend = () => new Promise((resolve, reject) => {
   export {
     getSend,
     getSingleSend,
+    getUserSend,
     updateSend,
     createSend,
     deleteSingleSend
