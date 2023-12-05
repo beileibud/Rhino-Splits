@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-import { getUsers } from '../../contax/userData';
 import { TextField, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { getUsers } from '../../contax/userData';
 
 const SelectUser = () => {
   const [users, setUsers] = useState([]);
@@ -19,15 +19,21 @@ const SelectUser = () => {
   }, []);
 
   const handleSearchChange = (event) => {
-    const searchTerm = event.target.value;
-    setSearchTerm(searchTerm);
-    const filtered = users.filter((user) => user.name && user.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const newSearchTerm = event.target.value; // Renamed variable to avoid shadowing
+    setSearchTerm(newSearchTerm);
+    const filtered = users.filter((user) => user.name && user.name.toLowerCase().includes(newSearchTerm.toLowerCase()));
     setFilteredUsers(filtered);
   };
 
   const handleUserSelect = (userId) => {
     setSelectedUserId(userId);
     router.push(`/user/${userId}`);
+  };
+
+  const handleKeyDown = (event, userId) => {
+    if (event.key === 'Enter') {
+      handleUserSelect(userId);
+    }
   };
 
   return (
@@ -40,11 +46,18 @@ const SelectUser = () => {
       </div>
       <ul className="user-list">
         {filteredUsers.map((user) => (
-          <li key={user.id} className="user-list-item" onClick={() => handleUserSelect(user.id)}>
-            <img className="user-image" src={user.image} alt={user.name} />
-            <div className="user-info">
-              <p className="user-name">{user.name}</p>
-            </div>
+          <li key={user.id} className="user-list-item">
+            <button
+              onClick={() => handleUserSelect(user.id)}
+              onKeyDown={(event) => handleKeyDown(event, user.id)}
+              className="user-select-button" // Add your styling here
+              type="button"
+            >
+              <img className="user-image" src={user.image} alt={user.name} />
+              <div className="user-info">
+                <p className="user-name">{user.name}</p>
+              </div>
+            </button>
             <input type="radio" name="user" value={user.id} checked={selectedUserId === user.id} onChange={() => handleUserSelect(user.id)} className="form-radio" />
           </li>
         ))}

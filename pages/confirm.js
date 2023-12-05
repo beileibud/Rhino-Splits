@@ -1,7 +1,6 @@
 import ConfirmPayment from '../components/payment/CofirmPayment';
 
-function Home () {
-
+function Home() {
   return (
     <div>
       <ConfirmPayment />

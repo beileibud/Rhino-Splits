@@ -1,8 +1,6 @@
-import SelectUser from "../components/payment/SelectUser";
+import SelectUser from '../components/payment/SelectUser';
 
 function Home() {
-
-
   return (
     <div>
       <SelectUser />

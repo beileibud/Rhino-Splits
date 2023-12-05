@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { Card } from 'react-bootstrap';
 import { getSingleUser } from '../contax/userData';
 import { getUserSend } from '../contax/sendData';
 
 const UserCard = ({ userId, ...users }) => {
-  const [user, setUser] = useState(null);
+  const [, setUser] = useState(null);
   const [send, setSend] = useState([]);
   const router = useRouter();
   console.warn({ users });
@@ -28,7 +29,7 @@ const UserCard = ({ userId, ...users }) => {
   return (
     <Card>
       <div className="select-user-container">
-        <div className="search-container"></div>
+        <div className="search-container" />
         <ul className="user-list">
           <img className="user-image" src={users.image} alt={users.name} />
           <div className="user-info">
@@ -41,11 +42,27 @@ const UserCard = ({ userId, ...users }) => {
         <Card.Text>{send?.date}</Card.Text>
         <div>
           <Card.Text>${send?.amount}</Card.Text>
-          <i className="bi bi-arrow-right-circle-fill" style={{ cursor: 'pointer' }} onClick={() => router.push(`/user/${userId}`)}></i>
+          <button
+            className="bi bi-arrow-right-circle-fill"
+            style={{ cursor: 'pointer', background: 'none', border: 'none' }}
+            onClick={() => router.push(`/user/${userId}`)}
+            type="button"
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                router.push(`/user/${userId}`);
+              }
+            }}
+            aria-label="View user" // Added aria-label for accessibility
+          /> {/* Corrected the closing tag alignment */}
         </div>
       </div>
     </Card>
   );
+};
+
+UserCard.propTypes = {
+  userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  // Add PropTypes validation for any other props as needed
 };
 
 export default UserCard;

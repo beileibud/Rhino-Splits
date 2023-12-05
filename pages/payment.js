@@ -1,9 +1,6 @@
-import PaymentForm from "../components/payment/PaymentForm";
-
+import PaymentForm from '../components/payment/PaymentForm';
 
 function Payment() {
-
-
   return (
     <div>
       <PaymentForm />

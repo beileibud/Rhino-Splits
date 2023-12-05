@@ -9,13 +9,13 @@ function UserPayment() {
   const { userId } = router.query;
   const [userData, setUserData] = useState(null);
   const [showPaymentForm, setShowPaymentForm] = useState(true);
-  const [paymentDetails, setPaymentDetails ] = useState({});
+  const [paymentDetails, setPaymentDetails] = useState({});
 
   useEffect(() => {
     if (userId) {
       getSingleUser(userId)
-        .then(data => setUserData(data))
-        .catch(error => console.error('Error fetching user data:', error));
+        .then((data) => setUserData(data))
+        .catch((error) => console.error('Error fetching user data:', error));
     }
   }, [userId]);
 
@@ -29,7 +29,7 @@ function UserPayment() {
       {userData && showPaymentForm && (
         <PaymentForm userId={userId} userData={userData} onSubmitDetails={handlePaymentDetails} />
       )}
-      {userData && !showPaymentForm && <ConfirmPayment paymentDetails={paymentDetails}/>}
+      {userData && !showPaymentForm && <ConfirmPayment paymentDetails={paymentDetails} />}
     </div>
   );
 }
