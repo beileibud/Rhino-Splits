@@ -1,6 +1,6 @@
-# React/Next.js Template
+# Rhino Splits -React/Next.js App
 
-[See Live Demo of this Template](https://drt-next-js-template.netlify.app/)
+[See Figma Prototype of this App flow](https://www.figma.com/proto/BY1IvjAWacq8Oh0x9QBgGN/Rhino-SPlit?page-id=0%3A1&type=design&node-id=5-2&viewport=-696%2C1447%2C1&t=mGRUv86ySbehRxHo-1&scaling=scale-down&starting-point-node-id=5%3A2&mode=design)
 
 ## Topics
 - [Get Started](#get-started)
