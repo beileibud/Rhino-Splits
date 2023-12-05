@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import { createSend } from '../../contax/sendData';
 
 const PaymentForm = ({ onSubmitDetails }) => {
@@ -17,9 +18,9 @@ const PaymentForm = ({ onSubmitDetails }) => {
 
   const handleSubmit = async () => {
     const details = {
-      amount: amount,
-      note: note,
-      userId: userId,
+      amount,
+      note,
+      userId,
       date: new Date().toISOString(),
     };
 
@@ -56,13 +57,17 @@ const PaymentForm = ({ onSubmitDetails }) => {
         <label htmlFor="note" className="block text-sm font-medium text-gray-700">
           Note
         </label>
-        <textarea id="note" name="note" rows="3" className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Add a note" value={note} onChange={(e) => setNote(e.target.value)}></textarea>
+        <textarea id="note" name="note" rows="3" className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Add a note" value={note} onChange={(e) => setNote(e.target.value)} />
       </div>
       <button type="button" className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm" onClick={handleSubmit}>
         Pay
       </button>
     </div>
   );
+};
+
+PaymentForm.propTypes = {
+  onSubmitDetails: PropTypes.func.isRequired, // Define the expected type for onSubmitDetails
 };
 
 export default PaymentForm;

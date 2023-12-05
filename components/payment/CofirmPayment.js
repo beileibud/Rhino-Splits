@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { getSingleUser } from '../../contax/userData'; // Ensure this import is correct
 
 const ConfirmPayment = ({ paymentDetails }) => {
@@ -11,8 +12,8 @@ const ConfirmPayment = ({ paymentDetails }) => {
   useEffect(() => {
     if (userId) {
       getSingleUser(userId)
-        .then(fetchedUser => setUser(fetchedUser))
-        .catch(error => console.error('Error fetching user data:', error));
+        .then((fetchedUser) => setUser(fetchedUser))
+        .catch((error) => console.error('Error fetching user data:', error));
     }
   }, [userId]);
 
@@ -46,6 +47,14 @@ const ConfirmPayment = ({ paymentDetails }) => {
       )}
     </div>
   );
+};
+
+ConfirmPayment.propTypes = {
+  paymentDetails: PropTypes.shape({
+    amount: PropTypes.number.isRequired,
+    note: PropTypes.string.isRequired,
+    userId: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ConfirmPayment;

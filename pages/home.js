@@ -6,10 +6,10 @@ function Home() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getUsers().then(usersData => {
+    getUsers().then((usersData) => {
       console.log('User data:', usersData);
       setUsers(usersData);
-    }).catch(error => {
+    }).catch((error) => {
       console.error('Error fetching users:', error);
       // Handle errors appropriately
     });
@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <div>
-      {users.map(user => (
+      {users.map((user) => (
         <UserCard key={user.id} userId={user.id} {...user} />
       ))}
     </div>
