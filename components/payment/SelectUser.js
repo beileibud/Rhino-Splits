@@ -27,7 +27,7 @@ const SelectUser = () => {
 
   const handleUserSelect = (userId) => {
     setSelectedUserId(userId);
-    router.push(`/user/${userId}`);
+    router.push(`/user/${userId}/pay`);
   };
 
   const handleKeyDown = (event, userId) => {

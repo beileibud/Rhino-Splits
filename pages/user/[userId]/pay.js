@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import ConfirmPayment from '../../components/payment/CofirmPayment';
-import PaymentForm from '../../components/payment/PaymentForm';
-import { getSingleUser } from '../../contax/userData';
+import ConfirmPayment from '../../../components/payment/CofirmPayment';
+import PaymentForm from '../../../components/payment/PaymentForm';
+import { getSingleUser } from '../../../contax/userData';
 
 function UserPayment() {
   const router = useRouter();
