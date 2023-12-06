@@ -3,6 +3,10 @@
     {
       "email": "beileibud@gmail.com",
       "password": "1232323232323",
+      "name": "Beilei ZHu",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKRKSSTcRVsCskCrKUZebSgBE8We2Lw02kTJBfBjRMlnX8=s576-c-no",
+      "bank": "Bank of America",
+      "balance": "$312.21",
       "id": 1
     }
   ],
@@ -69,6 +73,7 @@
       "amount": "23",
       "note": "pizza",
       "userId": "4",
+      "date": "2023-11-06T20:54:32.249Z",
       "id": "1X2s"
     }
   ],
@@ -77,26 +82,57 @@
       "amount": "12",
       "note": "test",
       "userId": "3",
+      "date": "2023-10-02T04:27:32.142Z",
       "id": "EMcFcTM"
     },
     {
       "amount": "23234",
       "note": "324234",
       "userId": "6",
+      "date": "2023-09-06T20:54:32.249Z",
       "id": "sX1YeFX"
     },
     {
       "amount": "56.34",
       "note": "🐇⚾️",
       "userId": "2",
+      "date": "2023-11-02T04:27:32.142Z",
       "id": "78GCfME"
     },
     {
       "amount": "674.00",
       "note": "this is for date",
       "userId": "2",
-      "data": "2023-12-05T04:27:32.142Z",
+      "date": "2023-12-05T04:27:32.142Z",
       "id": "y-mz9YS"
+    },
+    {
+      "amount": "23.34",
+      "note": "For party",
+      "userId": "3",
+      "date": "2023-12-01T20:54:32.249Z",
+      "id": "_iH7cca"
+    },
+    {
+      "amount": "21",
+      "note": "good time ",
+      "userId": "1",
+      "date": "2023-12-06T20:54:47.308Z",
+      "id": "NxE79xI"
+    },
+    {
+      "amount": "1.10",
+      "note": "test",
+      "userId": "5",
+      "date": "2023-12-06T20:57:36.625Z",
+      "id": "YB5o1Mr"
+    },
+    {
+      "amount": "0.54",
+      "note": "😆",
+      "userId": "7",
+      "date": "2023-12-06T20:57:53.728Z",
+      "id": "gqPmvyS"
     }
   ]
 }
