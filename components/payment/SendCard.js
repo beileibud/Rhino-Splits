@@ -32,7 +32,7 @@ SendCard.propTypes = {
   paymentDetails: PropTypes.shape({
     amount: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
+      PropTypes.number,
     ]).isRequired,
     note: PropTypes.string.isRequired,
     userId: PropTypes.string.isRequired,
