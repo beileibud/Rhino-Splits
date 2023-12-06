@@ -39,6 +39,19 @@ const getSend = () => new Promise((resolve, reject) => {
       
   });
 
+  const getUserAllSends = async (userId) => {
+    const response = await fetch(`${dbUrl}/sends?userId=${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return await response.json();
+  };
+
   const getUserSend = async (userId) => {
     const response = await fetch(`${dbUrl}/sends?userId=${userId}&_sort=id&_order=desc&_limit=1`, {
       method: 'GET',
@@ -106,6 +119,7 @@ const getSend = () => new Promise((resolve, reject) => {
     
   export {
     getSend,
+    getUserAllSends,
     getSingleSend,
     getUserSend,
     updateSend,

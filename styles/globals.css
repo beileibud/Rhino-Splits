@@ -29,19 +29,31 @@
 }
 
 /* select user page*/
-/* Select User Page Styles */
 .select-user-container {
-  max-width: 414px;
+  font-family: 'Arial', sans-serif;
+  max-width: 400px;
   margin: auto;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
   display: flex;
   align-items: center;
-  padding: 8px;
-  background-color: #f7f7f7; /* Adjust the color to match the design */
+  padding: 10px;
+  position: relative;/* Adjust the color to match the design */
+}
+
+.back-button {
+  color: #000;
+  /* Add styles for back button if needed */
+}
+
+.search-input {
+  border:#77DB13;
+  padding: 8px 10px;
+  margin-left: 10px;
+  width: calc(100% - 48px); /* Adjust based on IconButton size */
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 .user-list {
@@ -63,17 +75,26 @@
 .user-image {
   height: 40px;
   width: 40px;
-  border-radius: 50%;
-  margin-right: 16px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.user-select-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.user-name {
+  flex-grow: 1;
+  margin: 0;
 }
 
 .user-info {
   flex-grow: 1;
-}
-
-.user-name {
-  font-size: 16px;
-  color: #333;
 }
 
 input[type='radio'].form-radio {
@@ -84,30 +105,118 @@ input[type='radio'].form-radio {
 }
 
 /*user card*/
-.card {
-    display: flex;
-    flex-direction: column;
-    background: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-body {
-    padding: 16px;
-  }
-  
-  .card-title {
-    display: flex;
-    align-items: center;
-  }
-  
-  .card-text {
-    color: #666666;
-    margin-bottom: 4px;
-  }
-  
-  .bi-arrow-right-circle-fill {
-    font-size: 24px;
-    color: #000000;
-  }
-  
+/* UserCard Component */
+.user-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px; /* Spacing between cards */
+}
+
+.user-card .card-body {
+  padding: 16px;
+}
+
+.user-card .card-title {
+  display: flex;
+  align-items: center;
+}
+
+.user-card .user-name {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 0;
+}
+
+.user-card .send-note {
+  color: #666666;
+  font-size: 0.9em;
+}
+
+.user-card .transaction-date {
+  color: #666666;
+}
+
+.user-card .amount-positive {
+  color: red;
+}
+
+.user-card .amount-negative {
+  color: green;
+}
+
+.user-image {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+
+.bi-arrow-right-circle-fill {
+  font-size: 24px;
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* send card */
+.send-card-container {
+  position: relative;
+  max-width: 350px;
+  margin: 10px auto;
+  font-family: Arial, sans-serif;
+}
+
+.send-card-date {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.send-card-content {
+  background-color: #e7f9ec;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.send-card-money-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.send-card-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.send-card-note {
+  padding-top: 5px;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.send-card-like {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* Placeholder styles for like icon */
+}
+
+.send-card-admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  right: -20px; /* Adjust as necessary */
+  transform: translateY(-50%);
+}

@@ -39,19 +39,26 @@ const SelectUser = () => {
   return (
     <div className="select-user-container">
       <div className="search-container">
-        <IconButton onClick={() => router.push('/home')} className="back-button">
+        <IconButton onClick={() => router.push('/home')}>
           <ArrowBackIcon />
         </IconButton>
-        <input type="text" placeholder="Name, username, email, phone" value={searchTerm} onChange={handleSearchChange} className="search-input" />
+        <TextField fullWidth placeholder="Search by name" value={searchTerm} onChange={handleSearchChange} variant="outlined" size="small" />
       </div>
       <ul className="user-list">
         {filteredUsers.map((user) => (
           <li key={user.id} className="user-list-item">
-            <div className="user-select-button" onClick={() => handleUserSelect(user.id)}>
+            <button
+              onClick={() => handleUserSelect(user.id)}
+              onKeyDown={(event) => handleKeyDown(event, user.id)}
+              className="user-select-button" // Add your styling here
+              type="button"
+            >
               <img className="user-image" src={user.image} alt={user.name} />
-              <p className="user-name">{user.name}</p>
-              <input type="radio" name="user" value={user.id} checked={selectedUserId === user.id} onChange={() => handleUserSelect(user.id)} className="user-radio" />
-            </div>
+              <div className="user-info">
+                <p className="user-name">{user.name}</p>
+              </div>
+            </button>
+            <input type="radio" name="user" value={user.id} checked={selectedUserId === user.id} onChange={() => handleUserSelect(user.id)} className="form-radio" />
           </li>
         ))}
       </ul>
