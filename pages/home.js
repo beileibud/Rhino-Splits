@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import UserCard from '../components/UserCard';
+import UserCard from '../components/userCard';
 import { getUsers } from '../contax/userData';
 
 function Home() {
@@ -7,7 +7,6 @@ function Home() {
 
   useEffect(() => {
     getUsers().then((usersData) => {
-      console.log('User data:', usersData);
       setUsers(usersData);
     }).catch((error) => {
       console.error('Error fetching users:', error);
