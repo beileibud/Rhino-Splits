@@ -1,8 +1,11 @@
 # Rhino Splits -React/Next.js App
+![Alt text for the image](/public/App_Rhino.png)
+
 
 [See Figma Prototype of this App flow](https://www.figma.com/proto/BY1IvjAWacq8Oh0x9QBgGN/Rhino-SPlit?page-id=0%3A1&type=design&node-id=5-2&viewport=-696%2C1447%2C1&t=mGRUv86ySbehRxHo-1&scaling=scale-down&starting-point-node-id=5%3A2&mode=design)
 
-<img src="app_wide.png">
+![Alt text for the image](/public/app_wide.png)
+
 
 ## Topics
 - [Get Started](#get-started)

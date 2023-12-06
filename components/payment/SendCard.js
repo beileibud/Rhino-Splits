@@ -6,8 +6,9 @@ import getAdmin from '../../contax/adminData'; // Import the getAdmin function
 const SendCard = ({ paymentDetails }) => {
   const [, setUser] = useState(null);
   const [admin, setAdmin] = useState(null); // State to hold admin data
-
-  const { amount, note, userId, date } = paymentDetails;
+  const {
+    amount, note, userId, date,
+  } = paymentDetails;
 
   useEffect(() => {
     if (userId) {
@@ -41,7 +42,7 @@ const SendCard = ({ paymentDetails }) => {
           <span className="send-card-amount">{amount}</span>
           <div className="send-card-note">{note}</div>
         </div>
-        <div className="send-card-like"></div> {/* Placeholder for like icon */}
+        <div className="send-card-like" />{/* Placeholder for like icon */}
       </div>
       {admin && admin.avatar && (
         <img
