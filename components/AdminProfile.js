@@ -11,13 +11,13 @@ const AdminProfile = () => {
 
   return (
     <div>
-      <h1>hello seesee</h1>
+      <h1>AdminProfile</h1>
       <ul>
         {data.map((item) => (
           <div key={item.id}>
             <p>{item.name}</p>
-            <img src={item.image} alt={item.name} style={{ maxWidth: '200px' }} />
-            <p>{item.balance}</p>
+            <img src={item.avatar} alt={item.name} style={{ maxWidth: '200px' }} />
+            <p>Balance:{item.balance}</p>
           </div>
         ))}
       </ul>

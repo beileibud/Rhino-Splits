@@ -20,7 +20,7 @@ export default function BottomNavbar() {
     <BottomNavigation value={value} onChange={handleChange} showLabels>
       <BottomNavigationAction label="Pay" value="select" icon={<PaymentIcon />} />
       <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Transactions" value="transaction" icon={<SwapHorizIcon />} />
+      <BottomNavigationAction label="Transactions" value="profle" icon={<SwapHorizIcon />} />
       <BottomNavigationAction label="Friends" value="friends" icon={<PeopleIcon />} />
     </BottomNavigation>
   );
