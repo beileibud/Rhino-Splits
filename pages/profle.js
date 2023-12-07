@@ -1,5 +1,4 @@
-import AdminProfile from "../components/AdminProfile";
-
+import AdminProfile from '../components/AdminProfile';
 
 function Home() {
   return (

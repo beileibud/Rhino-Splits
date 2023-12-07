@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-import { TextField, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { getUsers } from '../../contax/userData';
 
@@ -47,11 +47,11 @@ const SelectUser = () => {
       <ul className="user-list">
         {filteredUsers.map((user) => (
           <li key={user.id} className="user-list-item">
-            <div className="user-select-button" onClick={() => handleUserSelect(user.id)}>
+            <button className="user-select-button" onClick={() => handleUserSelect(user.id)} onKeyDown={(event) => handleKeyDown(event, user.id)} type="button">
               <img className="user-image" src={user.image} alt={user.name} />
               <p className="user-name">{user.name}</p>
               <input type="radio" name="user" value={user.id} checked={selectedUserId === user.id} onChange={() => handleUserSelect(user.id)} className="user-radio" />
-            </div>
+            </button>
           </li>
         ))}
       </ul>

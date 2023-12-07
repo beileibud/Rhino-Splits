@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types';
+
 import { createSend } from '../../contax/sendData';
 
 const PaymentForm = ({ onSubmitDetails }) => {
