@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ReceiveCard from '../components/RecevieCard';
-import getReceive from '../contax/recieveData';
-
+import ReceiveCard from '../components/ReceiveCard';
+import getReceive from '../contax/receiveData';
 
 function Home() {
-  const [receives, setReceives] = useState([]); 
+  const [receives, setReceives] = useState([]);
 
   useEffect(() => {
     getReceive()

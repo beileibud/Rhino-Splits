@@ -5,9 +5,10 @@ import getReceive from '../contax/receiveData';
 
 const ReceiveCard = ({ receiveDetails }) => {
   const [user, setUser] = useState(null);
-  const [receive, setReceive] = useState(null);
-  const { amount = '', note, userId, date, type } = receiveDetails; // Assuming 'type' is part of receiveDetails now
-
+  const [, setReceive] = useState(null);
+  const {
+    amount = '', note, userId, date,
+  } = receiveDetails; // Assuming 'type' is part of receiveDetails now
 
   useEffect(() => {
     if (userId) {
@@ -22,11 +23,11 @@ const ReceiveCard = ({ receiveDetails }) => {
 
   const formattedDate = date
     ? new Date(date).toLocaleString('en-US', {
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      })
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
     : '';
 
   return (

@@ -17,16 +17,16 @@ function BetweenUser() {
   useEffect(() => {
     if (userId) {
       getSingleUser(userId).then(setUserData);
-  
+
       // Fetch all send transactions for the user and add type
       getUserAllSends(userId).then((sendsData) => {
-        const sendsWithType = sendsData.map(send => ({ ...send, type: 'send' }));
+        const sendsWithType = sendsData.map((send) => ({ ...send, type: 'send' }));
         setAllSends(sendsWithType);
       });
-  
+
       // Fetch all receive transactions and add type
       getReceive().then((receivesData) => {
-        const receivesWithType = receivesData.map(receive => ({ ...receive, type: 'receive' }));
+        const receivesWithType = receivesData.map((receive) => ({ ...receive, type: 'receive' }));
         setReceives(receivesWithType);
       });
     }
@@ -38,22 +38,18 @@ function BetweenUser() {
       .sort((a, b) => new Date(a.date) - new Date(b.date));
     setTransactions(combinedTransactions);
   }, [allSends, receives]);
-  
-  // You don't seem to need handlePaymentDetails for this page
-  // Remove it if it's not used
 
   return (
-  <div className="between-page">
-    {transactions.map((transaction) => {
-      return transaction.type === 'send' ? (
-        <SendCard key={transaction.id} paymentDetails={transaction} />
-      ) : (
-        <ReceiveCard key={transaction.id} receiveDetails={transaction} />
-      );
-    })}
-  </div>
-);
-
+    <div className="between-page">
+      {transactions.map((transaction) => (
+        transaction.type === 'send' ? (
+          <SendCard key={transaction.id} paymentDetails={transaction} />
+        ) : (
+          <ReceiveCard key={transaction.id} receiveDetails={transaction} />
+        )
+      ))}
+    </div>
+  );
 }
 
 export default BetweenUser;

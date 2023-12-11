@@ -7,7 +7,7 @@ const SendCard = ({ paymentDetails }) => {
   const [, setUser] = useState(null);
   const [admin, setAdmin] = useState(null); // State to hold admin data
   const {
-    amount, note, userId, date, type,
+    amount, note, userId, date,
   } = paymentDetails;
 
   useEffect(() => {
@@ -48,7 +48,6 @@ const SendCard = ({ paymentDetails }) => {
         />
       )}
     </div>
-    
   );
 };
 
