@@ -21,7 +21,7 @@ export default function BottomNavbar() {
       <BottomNavigationAction label="Pay" value="select" icon={<PaymentIcon />} />
       <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
       <BottomNavigationAction label="Transactions" value="profle" icon={<SwapHorizIcon />} />
-      <BottomNavigationAction label="Friends" value="friends" icon={<PeopleIcon />} />
+      <BottomNavigationAction label="Friends" value="friend" icon={<PeopleIcon />} />
     </BottomNavigation>
   );
 }

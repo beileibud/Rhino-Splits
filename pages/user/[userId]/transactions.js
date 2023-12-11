@@ -3,39 +3,57 @@ import React, { useEffect, useState } from 'react';
 import SendCard from '../../../components/payment/SendCard';
 import { getSingleUser } from '../../../contax/userData';
 import { getUserAllSends } from '../../../contax/sendData'; // Ensure you have this function defined to fetch sends
+import ReceiveCard from '../../../components/ReceiveCard';
+import getReceive from '../../../contax/receiveData';
 
 function BetweenUser() {
   const router = useRouter();
   const { userId } = router.query;
   const [, setUserData] = useState(null); // This state will hold the user data
   const [allSends, setAllSends] = useState([]); // This state will hold all the send transactions
+  const [receives, setReceives] = useState([]);
+  const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     if (userId) {
-      getSingleUser(userId)
-        .then((data) => setUserData(data))
-        .catch((error) => console.error('Error fetching user data:', error));
-
-      // Fetch all send transactions for the user
-      getUserAllSends(userId)
-        .then((sends) => setAllSends(sends)) // Assuming this returns an array of send transactions
-        .catch((error) => console.error('Error fetching sends:', error));
+      getSingleUser(userId).then(setUserData);
+  
+      // Fetch all send transactions for the user and add type
+      getUserAllSends(userId).then((sendsData) => {
+        const sendsWithType = sendsData.map(send => ({ ...send, type: 'send' }));
+        setAllSends(sendsWithType);
+      });
+  
+      // Fetch all receive transactions and add type
+      getReceive().then((receivesData) => {
+        const receivesWithType = receivesData.map(receive => ({ ...receive, type: 'receive' }));
+        setReceives(receivesWithType);
+      });
     }
   }, [userId]);
 
-  console.warn(userId);
-
+  useEffect(() => {
+    // Combine and sort the transactions whenever allSends or receives update
+    const combinedTransactions = [...allSends, ...receives]
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+    setTransactions(combinedTransactions);
+  }, [allSends, receives]);
+  
   // You don't seem to need handlePaymentDetails for this page
   // Remove it if it's not used
 
   return (
-    <div>
-      {/* Map through allSends to render SendCard for each transaction */}
-      {allSends.map((sendDetails) => (
-        <SendCard key={sendDetails.id} paymentDetails={sendDetails} />
-      ))}
-    </div>
-  );
+  <div className="between-page">
+    {transactions.map((transaction) => {
+      return transaction.type === 'send' ? (
+        <SendCard key={transaction.id} paymentDetails={transaction} />
+      ) : (
+        <ReceiveCard key={transaction.id} receiveDetails={transaction} />
+      );
+    })}
+  </div>
+);
+
 }
 
 export default BetweenUser;

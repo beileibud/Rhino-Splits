@@ -7,7 +7,7 @@ const SendCard = ({ paymentDetails }) => {
   const [, setUser] = useState(null);
   const [admin, setAdmin] = useState(null); // State to hold admin data
   const {
-    amount, note, userId, date,
+    amount, note, userId, date, type,
   } = paymentDetails;
 
   useEffect(() => {
@@ -37,12 +37,8 @@ const SendCard = ({ paymentDetails }) => {
     <div className="send-card-container">
       <div className="send-card-date">{formattedDate}</div>
       <div className="send-card-content">
-        <div className="send-card-amount-note">
-          <span className="send-card-money-icon">$</span>
-          <span className="send-card-amount">{amount}</span>
-          <div className="send-card-note">{note}</div>
-        </div>
-        <div className="send-card-like" />{/* Placeholder for like icon */}
+        <div className="send-card-money">${amount}</div>
+        <div className="send-card-note">{note}</div>
       </div>
       {admin && admin.avatar && (
         <img
@@ -52,6 +48,7 @@ const SendCard = ({ paymentDetails }) => {
         />
       )}
     </div>
+    
   );
 };
 
@@ -64,6 +61,7 @@ SendCard.propTypes = {
     note: PropTypes.string.isRequired,
     userId: PropTypes.string.isRequired,
     date: PropTypes.string, // Make sure date is included in paymentDetails
+    type: PropTypes.string,
   }).isRequired,
 };
 

@@ -34,11 +34,7 @@ const ConfirmPayment = ({ paymentDetails }) => {
             <dt className="text-green-500">Note</dt>
             <dd>{note}</dd>
           </dl>
-          <button
-            type="button"
-            className="mt-5 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-            onClick={handleConfirm}
-          >
+          <button type="button" className="mt-5 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" onClick={handleConfirm}>
             Confirm & Send
           </button>
         </>
@@ -51,7 +47,7 @@ const ConfirmPayment = ({ paymentDetails }) => {
 
 ConfirmPayment.propTypes = {
   paymentDetails: PropTypes.shape({
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     note: PropTypes.string.isRequired,
     userId: PropTypes.string.isRequired,
   }).isRequired,
