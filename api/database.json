@@ -71,10 +71,38 @@
   "receives": [
     {
       "amount": "23",
+      "note": "pizzae🍕",
+      "userId": "2",
+      "date": "2023-11-16T20:54:32.249Z",
+      "id": "1"
+    },
+    {
+      "amount": "12.02",
+      "note": "Share👔",
+      "userId": "2",
+      "date": "2023-08-06T20:54:32.249Z",
+      "id": "2"
+    },
+    {
+      "amount": "60.00",
       "note": "pizza",
-      "userId": "4",
-      "date": "2023-11-06T20:54:32.249Z",
-      "id": "1X2s"
+      "userId": "2",
+      "date": "2023-01-06T20:54:32.249Z",
+      "id": "3"
+    },
+    {
+      "amount": "200.00",
+      "note": "Group class.😊",
+      "userId": "2",
+      "date": "2023-12-06T20:54:32.249Z",
+      "id": "4"
+    },
+    {
+      "amount": "0.54",
+      "note": "That was really fun!",
+      "userId": "2",
+      "date": "2023-12-06T20:54:32.249Z",
+      "id": "5"
     }
   ],
   "sends": [
@@ -133,6 +161,13 @@
       "userId": "7",
       "date": "2023-12-06T20:57:53.728Z",
       "id": "gqPmvyS"
+    },
+    {
+      "amount": "30.00",
+      "note": "🌭🍱",
+      "userId": "4",
+      "date": "2023-12-07T23:27:43.673Z",
+      "id": "ShKHCDY"
     }
   ]
 }

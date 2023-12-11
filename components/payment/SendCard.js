@@ -37,12 +37,8 @@ const SendCard = ({ paymentDetails }) => {
     <div className="send-card-container">
       <div className="send-card-date">{formattedDate}</div>
       <div className="send-card-content">
-        <div className="send-card-amount-note">
-          <span className="send-card-money-icon">$</span>
-          <span className="send-card-amount">{amount}</span>
-          <div className="send-card-note">{note}</div>
-        </div>
-        <div className="send-card-like" />{/* Placeholder for like icon */}
+        <div className="send-card-money">${amount}</div>
+        <div className="send-card-note">{note}</div>
       </div>
       {admin && admin.avatar && (
         <img
@@ -64,6 +60,7 @@ SendCard.propTypes = {
     note: PropTypes.string.isRequired,
     userId: PropTypes.string.isRequired,
     date: PropTypes.string, // Make sure date is included in paymentDetails
+    type: PropTypes.string,
   }).isRequired,
 };
 
